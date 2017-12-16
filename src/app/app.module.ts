@@ -10,23 +10,30 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { RedditService } from './services/redditService';
+import { HttpModule } from '@angular/http';
+import {DetailPage} from '../pages/details/details';
+
 
 @NgModule({
   declarations: [
     MyApp,
     RedditPage,
     settingPage,
+    DetailPage,
     HomePage,
     TabsPage
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     RedditPage,
+    DetailPage,
     settingPage,
     HomePage,
     TabsPage
@@ -34,6 +41,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    RedditService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
